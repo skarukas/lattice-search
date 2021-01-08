@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Lattice Search</title>
+</head>
+<body>
+    <div id="header">
+        <div id="basis-interval-container">
+            <span>basis intervals</span>
+            <div id="interval-line">
+                <div class="interval-field">
+                    <input id="first-field" type="text" maxlength="7">
+                </div>
+            </div>
+            <button id="plus-button" title="Add basis interval"><img src="assets/plus-icon.png"/></button>
+        </div>
+        <div id="thresh">
+            threshold
+            <input type="number" value="1" min="0.5" max="100">¢
+        </div>
+    </div>
+
+    <div id="interval-info-container" class="info-container">
+        <div class="info">
+            <h4>Interval Notation (for numbers A, B):</h4>
+            <p><strong>A:B</strong> <em>(e.g. 5:4)</em> - a frequency ratio</p>
+            <p><strong>A#B</strong> <em>(e.g. 4#12)</em> - an equal tempered interval, <em>A</em> steps in <em>B</em>-EDO</p>
+            <p><strong>A c</strong> <em>(e.g. 100 c)</em> - a value in cents</p>
+        </div>
+    </div>
+    <div id="thresh-info-container" class="info-container">
+        <div class="info">
+            <p>Determines how close (in cents) the combination of basis intervals must be to the goal interval.</p>
+        </div>
+    </div>
+
+    <div id="key">
+        <div id="result"></div>
+        <div class="sum-container"></div>
+    </div>
+    <div id="canvas"></div>
+    <div id="footer">
+        <div id="footer-center"><a target="_blank" href="https://github.com/skarukas">Stephen Karukas on Github</a></div>
+        <!-- <button id="help-button" title="Help"><img src="assets/help-icon.png"/></button> -->
+    </div>
+    
+
+    <script src="index.js" type="module"></script>
+    <script src="lib/svg.min.js"></script>
+    <script src="lib/jquery-1.9.1.min.js"></script>
+    <script src="lib/tune.js"></script>
+    <script src="lib/Queue.js"></script>
+</body>
+</html>

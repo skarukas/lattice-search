@@ -1,0 +1,178 @@
+body {
+    background: rgb(240, 240, 240);
+    padding: 0px;
+    margin: 0px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+svg *, #key {
+    pointer-events: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+#canvas {
+    margin: 0;
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: lightgrey;
+    border-bottom: 2px solid grey;
+    z-index: 10;
+}
+
+#key {
+    display: none;
+    position: fixed;
+    top: 30px;
+    right: 10px;
+    z-index: 1;
+    text-align: right;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+input {
+    width: 60px;
+    border-radius: 5px;
+    height: 16px;
+    margin: 1px;
+    margin-left: 2px;
+    padding: 0;
+}
+
+.invalid-field {
+    border-color: red;
+    color: red;
+}
+
+.interval-field, #interval-line {
+    position: relative;
+    float: left;
+}
+
+.interval-field {
+    display: inline;
+}
+
+#basis-interval-container {
+    padding: 0;
+    margin-right: 5px;
+    height: 100%;
+    position: relative;
+    display: inline;
+    float: left;
+    padding-left: 5px;
+    background-color: rgb(192, 192, 192);
+    border-left: 5px solid grey;
+    border-right: 5px solid  grey;
+
+}
+
+#basis-interval-container span {
+    float: left;
+}
+
+
+button {
+    padding: 0;
+    margin: 0;
+    border: none;
+    height: 18px;
+    width: 18px;
+    background: none;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+    position: absolute;
+    top: 3px;
+    right: 6px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+button img {
+    padding: 0;
+    margin: 0;
+    height: 15px;
+    width: 15px;
+}
+
+#plus-button {
+    margin-left: 10px;
+    position: relative;
+}
+
+#thresh {
+    border-left: 5px solid grey;
+    border-right: 5px solid  grey;
+    background-color: rgb(192, 192, 192);
+    float: left;
+    padding: 0px 5px;
+}
+
+#help-button img {
+    width: 30px;
+    height: 30px;
+}
+
+#help-button {
+    opacity: 0.3;
+    transition: opacity 0.2s;
+    width: 30px;
+    height: 30px;
+}
+
+#help-button:hover {
+    opacity: 0.8;
+}
+
+#footer {
+    padding: 10px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+}
+
+#footer-center {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#footer-center a {
+    color: rgb(77, 132, 250);
+    opacity: 0.5;
+    text-decoration: none;
+    transition: opacity 0.2s
+}
+
+#footer-center a:hover {
+    opacity: 1;
+}
+
+
+.info-container {
+    position: absolute;
+    width: 100%;
+    top: 100px;
+    left: 0px;
+
+}
+
+.info {
+    background-color: white;
+    color: black;
+    margin: 0 auto;
+    padding: 10px;
+    opacity: 0.7;
+}
