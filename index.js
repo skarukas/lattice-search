@@ -109,10 +109,10 @@ let twelveText = svg.text('1200¢')
     .opacity(0.3)
 twelveText.move(marginLeft - (twelveText.length() + 10), twelveY - 8)
 
-let infoText = svg.text('Drag vertically to approximate an interval using the basis intervals.')
+let infoText = svg.text('↑ Drag vertically to approximate an interval using the basis intervals.\n→ Dragging further to the right will make this adjustment more fine.')
     .fill('grey')
-    .opacity(0.3)
-infoText.move(marginLeft+8, zeroY + 8)
+    .opacity(0.5)
+infoText.move(marginLeft+20, zeroY + 20)
 
 let circle = svg.circle(10)
     .center(marginLeft, h - marginBottom)
