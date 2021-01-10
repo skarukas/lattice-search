@@ -74,7 +74,8 @@ input {
     margin-right: 5px;
     padding: 0;
     padding-left: 5px;
-    height: 22px;
+    min-height: 22px;
+    position: relative;
 }
 
 #basis-interval-container span {
