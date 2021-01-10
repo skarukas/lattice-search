@@ -5,6 +5,20 @@ const $container = $('.sum-container');
 const $intervalInfo = $('#interval-info-container').hide();
 const $threshInfo = $('#thresh-info-container').hide();
 
+$('#lightness input')
+    .on('change', event => {
+        lightnessPercent = event.target.value
+        $('line').add('text').each(function() {
+            let attr = (this.nodeName == 'text')? 'fill' : 'stroke'
+            let stroke = $(this).attr(attr) || ""
+            if (stroke.startsWith('hsl')) {
+                let hslTriplet = stroke.split(",")
+                hslTriplet[2] = lightnessPercent + "%)"
+                $(this).attr(attr, hslTriplet.join(","))
+            }
+        })
+    })
+
 $('#thresh input')
     .on('input', event => threshold = Math.min(event.target.value/100, 1))
     .on('focus', e => $threshInfo.show())
@@ -68,6 +82,7 @@ function updateIntervals() {
 //let primes = [3, 5, 7, 11, 13]
 //let intervalRatios = primes.map(p => [p, (2**Math.floor(Math.log2(p)))])
 //let intervals = intervalRatios.map(([a, b]) => a / b)
+let lightnessPercent = 50;
 let threshold = 0.01
 let w = document.body.clientWidth
 let h = 1000
@@ -111,7 +126,7 @@ twelveText.move(marginLeft - (twelveText.length() + 10), twelveY - 8)
 
 let infoText = svg.text('↑ Drag vertically to approximate an interval using the basis intervals.\n→ Dragging further to the right will make this adjustment more fine.')
     .fill('grey')
-    .opacity(0.5)
+    .opacity(0.3)
 infoText.move(marginLeft+20, zeroY + 20)
 
 let circle = svg.circle(10)
@@ -135,7 +150,7 @@ let alignLine = svg.line(marginLeft, zeroY, marginLeft, zeroY)
 
 
 function randomColor(i) {
-    let res = `hsl(${i * 65}, 70%, 50%)`
+    let res = `hsl(${i * 65}, 70%, ${lightnessPercent}%)`
     return res
 }
 
@@ -252,7 +267,7 @@ function drawInterval(x1, y1, x2, y2, color, text) {
     let g = intervalLines.group().back()
     g.line(x1, y1, x2, y1).stroke({width: 3, color: 'rgb(200, 200, 200)'})/* .marker('end', arrow) */
     g.line(x2, y1, x2, y2).stroke({width: 3, color }).marker('end', arrow).back()
-    let t = g.text(text).y((y1 + y2) / 2 - 4).css('font-size', 10).fill(color)
+    let t = g.text(text).y((y1 + y2) / 2 - 4).css({'font-size': 10, 'font-weight': 'bold'}).fill(color)
     t.x(x2 - (t.length() + 4))
 }
 

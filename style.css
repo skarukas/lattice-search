@@ -62,17 +62,19 @@ input {
 }
 
 #basis-interval-container {
-    padding: 0;
-    margin-right: 5px;
-    height: 100%;
     position: relative;
-    display: inline;
-    float: left;
-    padding-left: 5px;
+}
+
+.header-item {
     background-color: rgb(192, 192, 192);
     border-left: 5px solid grey;
     border-right: 5px solid  grey;
-
+    float: left;
+    display: inline;
+    margin-right: 5px;
+    padding: 0;
+    padding-left: 5px;
+    height: 22px;
 }
 
 #basis-interval-container span {
@@ -110,13 +112,6 @@ button img {
     position: relative;
 }
 
-#thresh {
-    border-left: 5px solid grey;
-    border-right: 5px solid  grey;
-    background-color: rgb(192, 192, 192);
-    float: left;
-    padding: 0px 5px;
-}
 
 #help-button img {
     width: 30px;
